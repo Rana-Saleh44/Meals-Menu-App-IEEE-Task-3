@@ -1,4 +1,4 @@
-name: flutter_application_1
+name: .vscode\Meals-Menu-App-IEEE-Task-3
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -59,25 +59,14 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - C:\Users\MOHAMED\Desktop\flutter_projrcts\flutter_application_1\assets\Egyptian-Koshari-square-768x768.jpg
-    - C:\Users\MOHAMED\Desktop\flutter_projrcts\flutter_application_1\assets\1050377.jpg
-    - C:\Users\MOHAMED\Desktop\flutter_projrcts\flutter_application_1\assets\wp7029319.webp
-    - C:\Users\MOHAMED\Desktop\flutter_projrcts\flutter_application_1\assets\Vegan-Stir-Fry-006.webp
-    - C:\Users\MOHAMED\Desktop\flutter_projrcts\flutter_application_1\assets\sub-buzz-1009-1646440684-8.jpg
-    - C:\Users\MOHAMED\Desktop\flutter_projrcts\flutter_application_1\assets\easy-dinner-recipes-f768402675e04452b1531360736da8b5.jpg
-    - C:\Users\MOHAMED\Desktop\flutter_projrcts\flutter_application_1\assets\Creamy-Cajun-Chicken-6.webp
-    - C:\Users\MOHAMED\Desktop\flutter_projrcts\flutter_application_1\assets\Cheesy-Skillet-Chicken-Parm-Meatballs_012-tight-cropped.webp
-    - C:\Users\MOHAMED\Desktop\flutter_projrcts\flutter_application_1\assets\photo_2024-03-03_22-04-54.jpg
-    - C:\Users\MOHAMED\Desktop\flutter_projrcts\flutter_application_1\assets\quiz-logo.png
-    - C:\Users\MOHAMED\Desktop\flutter_projrcts\flutter_application_1\assets\dice-images\dice-images\dice-1.png
-    - C:\Users\MOHAMED\Desktop\flutter_projrcts\flutter_application_1\assets\dice-images\dice-images\dice-2.png
-    - C:\Users\MOHAMED\Desktop\flutter_projrcts\flutter_application_1\assets\dice-images\dice-images\dice-3.png
-    - C:\Users\MOHAMED\Desktop\flutter_projrcts\flutter_application_1\assets\dice-images\dice-images\dice-4.png
-    - C:\Users\MOHAMED\Desktop\flutter_projrcts\flutter_application_1\assets\dice-images\dice-images\dice-5.png
-    - C:\Users\MOHAMED\Desktop\flutter_projrcts\flutter_application_1\assets\dice-images\dice-images\dice-6.png
-    - C:\Users\MOHAMED\Desktop\flutter_projrcts\flutter_application_1\assets\quiz-logo.png
-    - C:\Users\MOHAMED\Desktop\flutter_projrcts\flutter_application_1\assets\white_logo.png
-    - C:\Users\MOHAMED\Desktop\flutter_projrcts\flutter_application_1\assets\fight_to_reach.gif
+    - C:\Users\MOHAMED\Desktop\flutter_projrcts\.vscode\Meals-Menu-App-IEEE-Task-3\assets\Egyptian-Koshari-square-768x768.jpg
+    - C:\Users\MOHAMED\Desktop\flutter_projrcts\.vscode\Meals-Menu-App-IEEE-Task-3\assets\1050377.jpg
+    - C:\Users\MOHAMED\Desktop\flutter_projrcts\.vscode\Meals-Menu-App-IEEE-Task-3\assets\wp7029319.webp
+    - C:\Users\MOHAMED\Desktop\flutter_projrcts\.vscode\Meals-Menu-App-IEEE-Task-3\assets\Vegan-Stir-Fry-006.webp
+    - C:\Users\MOHAMED\Desktop\flutter_projrcts\.vscode\Meals-Menu-App-IEEE-Task-3\assets\sub-buzz-1009-1646440684-8.jpg
+    - C:\Users\MOHAMED\Desktop\flutter_projrcts\.vscode\Meals-Menu-App-IEEE-Task-3\assets\easy-dinner-recipes-f768402675e04452b1531360736da8b5.jpg
+    - C:\Users\MOHAMED\Desktop\flutter_projrcts\.vscode\Meals-Menu-App-IEEE-Task-3\assets\Creamy-Cajun-Chicken-6.webp
+    - C:\Users\MOHAMED\Desktop\flutter_projrcts\.vscode\Meals-Menu-App-IEEE-Task-3\assets\Cheesy-Skillet-Chicken-Parm-Meatballs_012-tight-cropped.webp
   # To add assets to your application, add an assets section, like this:
 
   # An image asset can refer to one or more resolution-specific "variants", see
