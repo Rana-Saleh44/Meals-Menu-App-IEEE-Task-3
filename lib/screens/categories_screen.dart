@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-
-import '../widgets/main_drawer.dart';
+import 'package:task3/widgets/main_drawer.dart';
 
 class CategoriesScreen extends StatelessWidget {
+  const CategoriesScreen({super.key, required this.category});
+  final String category;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,9 +11,13 @@ class CategoriesScreen extends StatelessWidget {
         title: Text('Meals Categories'),
       ),
       drawer: MainDrawer(),
-      body: Center(
-        child: Text('Categories Screen'),
-      ),
+      body: CustomScrollView(
+          // slivers: [
+          //   CategoriesListViewBuilder(
+          //     category: category,
+          //   ),
+          // ],
+          ),
     );
   }
 }
