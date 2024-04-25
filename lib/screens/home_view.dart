@@ -12,11 +12,11 @@ class HomeView extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'News',
+              'Meals',
               style: TextStyle(color: Colors.black),
             ),
             Text(
-              'Cloud',
+              'Menu',
               style: TextStyle(color: Colors.orange),
             ),
           ],
