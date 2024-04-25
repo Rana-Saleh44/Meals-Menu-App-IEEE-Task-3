@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:task3/screens/home_view.dart';
 
 void main() {
-  runApp(const NewsApp());
+  runApp(const MealsMenuApp());
 }
 
-class NewsApp extends StatelessWidget {
-  const NewsApp({super.key});
+class MealsMenuApp extends StatelessWidget {
+  const MealsMenuApp({super.key});
 
   @override
   Widget build(BuildContext context) {
