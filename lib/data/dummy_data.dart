@@ -1,0 +1,158 @@
+import 'package:task3/models/meal_model.dart';
+
+const availableMeals = [
+  Meal(
+      id: '1',
+      categories: ['Vegan/Vegeterian', 'Lunch'],
+      title: 'aVegan Stir Fry',
+      imageUrl: 'assets/meals/Vegan-Stir-Fry-006.webp',
+      ingredients: [
+        '4 cups Mixed vegetables (bell peppers, broccoli, carrots, snap peas)',
+        '1 block Firm tofu, diced',
+        '3 cloves Garlic, minced',
+        '1 tablespoon Ginger, grated',
+        '3 tablespoons Soy sauce or tamari',
+        '2 tablespoons Sesame oil or vegetable oil',
+        '1 tablespoon Lime juice (optional)',
+        'Thai basil or cilantro, chopped - for garnish (optional)'
+      ],
+      steps: [
+        '1. Prepare Ingredients: Chop vegetables and tofu.',
+        '2. Cook Tofu: Brown tofu in oil with garlic and ginger.',
+        '3. Add Vegetables: Stir-fry vegetables until tender.',
+        '4. Season: Add soy sauce and cook briefly.',
+        '5. Optional: Add lime juice for extra flavor.',
+        '6. Serve: Garnish with herbs if desired and serve hot.'
+      ],
+      duration: 25,
+      isGlutenFree: false,
+      isLactoseFree: false,
+      isVegan: true,
+      isVegetarian: true),
+  Meal(
+      id: '2',
+      categories: ['Lunch'],
+      title: 'Cheesy Skillet Chicken Parm Meatballs',
+      imageUrl: '/meals/Chicken-Parm-Meatballs.webp',
+      ingredients: [
+        'Ground Chicken: 1 pound',
+        'Breadcrumbs: 1/2 cup',
+        'Parmesan Cheese: 1/2 cup, grated',
+        'Mozzarella Cheese: 1/2 cup, shredde',
+        'Egg: 1 large',
+        'Garlic: 2 cloves, minced',
+        'Italian Seasoning: 1 teaspoon',
+        'Salt: 1/2 teaspoon',
+        'Black Pepper: 1/4 teaspoon',
+        'Olive Oil: 2 tablespoons',
+        'Marinara Sauce: 2 cups',
+        'Fresh Basil: 2 tablespoons, chopped (for garnish)',
+        'Cooked Pasta: Optional, for serving'
+      ],
+      steps: [
+        '1. Mix ingredients: Combine ground chicken, breadcrumbs, Parmesan, mozzarella, garlic, Italian seasoning, salt, pepper, and egg in a bowl.',
+        '2. Shape meatballs: Roll mixture into balls, about 1-1.5 inches in size.',
+        '3. Cook meatballs: Brown them in olive oil for 5-7 minutes, turning occasionally.',
+        '4. Add sauce: Pour marinara sauce over meatballs.',
+        '5. Simmer: Let them simmer for 5-10 minutes.',
+        '6. Serve: Garnish with basil if desired, and enjoy!'
+      ],
+      duration: 25,
+      isGlutenFree: false,
+      isLactoseFree: false,
+      isVegan: false,
+      isVegetarian: false),
+  Meal(
+      id: '3',
+      categories: ['Italian', 'Lunch', 'Dinner'],
+      title: 'Creamy Cajun Chicken',
+      imageUrl: 'assets/meals/Creamy-Cajun-Chicken.webp',
+      ingredients: [
+        'Chicken breasts: 4 boneless, skinless',
+        'Cajun seasoning: 2 tablespoons',
+        'Olive oil: 2 tablespoons',
+        'Butter: 2 tablespoons',
+        'Garlic: 4 cloves, minced',
+        'Heavy cream: 1 cup',
+        'Chicken broth: 1/2 cup',
+        'Parmesan cheese: 1/2 cup, grated',
+        'Salt: To taste',
+        'Black pepper: To taste',
+        'Fresh parsley: For garnish (optional)'
+      ],
+      steps: [
+        'Season the chicken breasts on both sides with Cajun seasoning, salt, and black pepper.',
+        'Heat olive oil in a large skillet over medium-high heat. Add the chicken breasts and cook for about 6-7 minutes on each side, or until they are cooked through and nicely browned. Remove the chicken from the skillet and set aside.',
+        'In the same skillet, melt the butter over medium heat. Add minced garlic and cook for about 1 minute, until fragrant.',
+        'Stir in heavy cream and chicken broth. Bring the mixture to a simmer.',
+        'Add grated Parmesan cheese to the sauce and stir until its melted and well combined.',
+        'Return the chicken breasts to the skillet and spoon the sauce over them. Let them simmer in the sauce for another 2-3 minutes.',
+        'Garnish with fresh parsley before serving if desired.'
+      ],
+      duration: 30,
+      isGlutenFree: true,
+      isLactoseFree: false,
+      isVegan: false,
+      isVegetarian: false),
+  Meal(
+      id: '4',
+      categories: ['Lunch', 'Dinner'],
+      title: 'Steak',
+      imageUrl: 'assets/meals/steak.jpg',
+      ingredients: [
+        'Steak (your choice of cut, such as ribeye, sirloin, or filet mignon)',
+        'Salt',
+        'Black pepper',
+        'Olive oil or butter (optional)',
+        'Fresh herbs (optional, for garnish)'
+      ],
+      steps: [
+        'Take the steak out of the refrigerator and let it sit at room temperature for about 30 minutes to 1 hour before cooking. This allows the steak to cook more evenly.',
+        'Preheat your grill, grill pan, or skillet over high heat. Make sure its hot before you start cooking.',
+        'Season the steak generously with salt and black pepper on both sides.',
+        'If using a grill or grill pan, brush the grates with a little olive oil to prevent sticking. If using a skillet, you can add a small amount of olive oil or butter to the pan.',
+        'Place the steak on the grill or in the skillet and cook for 3-4 minutes on each side for medium-rare, or longer if you prefer your steak more well-done. Avoid moving the steak around too much to allow for proper searing.',
+        'Use a meat thermometer to check the internal temperature of the steak. For medium-rare, it should read around 135°F (57°C). The temperature will continue to rise slightly as the steak rests.',
+        'Once cooked to your desired doneness, remove the steak from the grill or skillet and let it rest for about 5-10 minutes on a cutting board. This allows the juices to redistribute throughout the meat.',
+        'Slice the steak against the grain and serve immediately, garnished with fresh herbs if desired.'
+      ],
+      duration: 23,
+      isGlutenFree: true,
+      isLactoseFree: true,
+      isVegan: false,
+      isVegetarian: false),
+  Meal(
+      id: '5',
+      categories: [],
+      title: 'Burger',
+      imageUrl: 'assets/meals/burger.jpg',
+      ingredients: [
+        'Ground beef: 1 pound (or substitute with ground turkey, chicken, or plant-based meat for a different option)',
+        'Hamburger buns: 4',
+        'Cheese slices: 4 (optional)',
+        'Lettuce leaves: 4',
+        'Tomato: 1, sliced',
+        'Onion: 1, sliced',
+        'Pickles: Optional, for topping',
+        'Ketchup: Optional, for topping',
+        'Mustard: Optional, for topping',
+        'Salt: To taste',
+        'Black pepper: To taste',
+        'Olive oil or vegetable oil: For cooking'
+      ],
+      steps: [
+        'Preheat the Grill or Pan: Preheat your grill or a large skillet over medium-high heat.',
+        'Form the Patties: Divide the ground beef into 4 equal portions. Shape each portion into a patty about 1/2 to 3/4 inch thick. Season both sides of each patty with salt and black pepper.',
+        'Cook the Patties:',
+        'If using a grill: Brush the grill grates lightly with oil. Place the patties on the grill and cook for about 4-5 minutes on each side for medium doneness.',
+        'If using a skillet: Heat a tablespoon of oil in the skillet. Add the patties and cook for about 4-5 minutes on each side, or until they reach your desired level of doneness.',
+        'Toast the Buns: While the patties are cooking, lightly toast the hamburger buns on the grill or in a toaster until they are golden brown.',
+        'Assemble the Burgers: Place a cooked patty on the bottom half of each toasted bun. If using cheese slices, place a slice on top of each patty to melt slightly from the heat. Add lettuce, tomato slices, onion slices, pickles, ketchup, mustard, or any other desired toppings.',
+        'Serve: Top each burger with the other half of the toasted bun and serve immediately.'
+      ],
+      duration: 10,
+      isGlutenFree: false,
+      isLactoseFree: true,
+      isVegan: false,
+      isVegetarian: false)
+];
