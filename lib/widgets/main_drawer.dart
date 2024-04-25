@@ -7,17 +7,17 @@ class MainDrawer extends StatelessWidget {
       child: Column(
         children: [
           AppBar(
-            title: Text('Menu'),
+            title: const Text('Menu'),
             automaticallyImplyLeading: false,
           ),
           ListTile(
-            leading: Icon(Icons.restaurant),
-            title: Text('Meals'),
+            leading: const Icon(Icons.restaurant),
+            title: const Text('Meals'),
             onTap: () {
               Navigator.of(context).pushReplacementNamed('/');
             },
           ),
-          Divider(),
+          const Divider(),
           // Add more options for the drawer as needed
         ],
       ),
