@@ -12,7 +12,7 @@ class MainDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.restaurant),
-            title: const Text('Meals'),
+            title: const Text('Home Screen'),
             onTap: () {
               Navigator.of(context).pushReplacementNamed('/');
             },
