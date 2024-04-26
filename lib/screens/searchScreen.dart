@@ -168,7 +168,9 @@ class _SearchPageState extends State<SearchPage> {
             Wrap(
               spacing: 8.0,
               children: [
-                buildFilterButton("Gluten Free"),
+                buildFilterButton(
+                  "Gluten Free",
+                ),
                 buildFilterButton("Lactose Free"),
                 buildFilterButton("Vegetarian"),
                 buildFilterButton("Vegan"),
@@ -255,8 +257,9 @@ class _SearchPageState extends State<SearchPage> {
       onPressed: () => updateSelectedFoodTypes(foodType),
       style: ButtonStyle(
         backgroundColor: isSelected
-            ? MaterialStateProperty.all<Color>(const Color.fromARGB(
-                255, 1, 7, 11)) // Change to your selected color
+            ? MaterialStateProperty.all<Color>(
+                const Color.fromARGB(255, 156, 58, 1),
+              ) // Change to your selected color
             : null,
       ),
       child: Text(
