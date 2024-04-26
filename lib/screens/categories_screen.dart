@@ -8,15 +8,15 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Meals Categories'),
+        title: const Text('Meals Categories'),
       ),
       drawer: MainDrawer(),
-      body: CustomScrollView(
-          // slivers: [
+      body: const CustomScrollView(
+          // slvers: [
           //   CategoriesListViewBuilder(
           //     category: category,
           //   ),
-          // ],
+          // ],i
           ),
     );
   }

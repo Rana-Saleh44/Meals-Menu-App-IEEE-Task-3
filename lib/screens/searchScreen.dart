@@ -1,4 +1,5 @@
-// ignore: file_names
+
+
 import 'package:flutter/material.dart';
 import 'package:task3/models/food_model.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -70,11 +71,11 @@ class _SearchPageState extends State<SearchPage>{
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 156, 58, 1),
+        backgroundColor: const Color.fromARGB(255, 156, 58, 1),
         elevation: 0.0,
       ),
       body: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -83,7 +84,7 @@ class _SearchPageState extends State<SearchPage>{
               child: Text(
                 "Find Food",
                 style: GoogleFonts.abel(
-                  textStyle: TextStyle(
+                  textStyle: const TextStyle(
                     color: Color.fromARGB(255, 156, 58, 1),
                     fontSize: 22.0,
                     fontWeight: FontWeight.w900,
@@ -91,25 +92,25 @@ class _SearchPageState extends State<SearchPage>{
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20.0,
             ),
             TextField(
               onChanged: (value) => updateList(value),
-              style: TextStyle(color: Colors.black),
+              style: const TextStyle(color: Colors.black),
               decoration: InputDecoration(
                 filled: true,
-                fillColor: Color.fromARGB(255, 156, 58, 1),
+                fillColor: const Color.fromARGB(255, 156, 58, 1),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.0),
                   borderSide: BorderSide.none,
                 ),
                 hintText: "eg: Koshry",
-                prefixIcon: Icon(Icons.search),
+                prefixIcon: const Icon(Icons.search),
                 prefixIconColor: Colors.white,
               ),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             Wrap(
               spacing: 8.0,
               children: [
@@ -119,10 +120,10 @@ class _SearchPageState extends State<SearchPage>{
                 buildFilterButton("Vegan"),
               ],
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             Expanded(
               child: display_list.length == 0
-                  ? Center(
+                  ? const Center(
                       child: Text(
                         "No Result Found",
                         style: TextStyle(
@@ -135,24 +136,24 @@ class _SearchPageState extends State<SearchPage>{
                   : ListView.builder(
                       itemCount: display_list.length,
                       itemBuilder: (context, index) => ListTile(
-                        contentPadding: EdgeInsets.all(8.0),
+                        contentPadding: const EdgeInsets.all(8.0),
                         title: Text(
                           display_list[index].food_title!,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         subtitle: Text(
                           '${display_list[index].food_price!}\$',
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         trailing: Text(
                           "${display_list[index].rating}",
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Color.fromARGB(255, 131, 101, 18),
                             fontWeight: FontWeight.bold,
                             fontSize: 13.0,
