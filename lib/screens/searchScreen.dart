@@ -3,23 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:task3/models/food_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
-void main()
-{
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget{
-    const MyApp({Key?key}) : super (key:key);
-    @override
-    Widget build(BuildContext context)
-    {
-      return MaterialApp(
-        home: SearchPage(),
-      );
-    }
-}
-
 class SearchPage extends StatefulWidget{
   const SearchPage ({Key?key}) : super (key:key);
     @override
@@ -27,7 +10,6 @@ class SearchPage extends StatefulWidget{
 }
 
 class _SearchPageState extends State<SearchPage>{
-
   // dummy food
   static List<FoodModel> main_food_list = [
     FoodModel("Italian","vagan","aVegan-Stir-Fry",21 ,2.5 ,"assets/Vegan-Stir-Fry-006.webp"),
@@ -83,7 +65,6 @@ class _SearchPageState extends State<SearchPage>{
       }
     });
   }
-  @override
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -202,7 +183,7 @@ class _SearchPageState extends State<SearchPage>{
       style: ButtonStyle(
         backgroundColor: isSelected
             ? MaterialStateProperty.all<Color>(
-                Colors.blue) // Change to your selected color
+                const Color.fromARGB(255, 1, 7, 11)) // Change to your selected color
             : null,
       ),
       child: Text(
