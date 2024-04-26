@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task3/models/category_model.dart';
 import 'package:task3/screens/categories_screen.dart';
+import 'package:task3/screens/searchScreen.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({super.key, required this.category});
@@ -12,8 +13,8 @@ class CategoryCard extends StatelessWidget {
         Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) {
-              return CategoriesScreen(
-                category: category.categoryName,
+              return SearchPage(
+                  selectedCategory: category.categoryName,
               );
             },
           ),
