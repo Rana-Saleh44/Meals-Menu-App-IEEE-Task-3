@@ -14,7 +14,7 @@ class _SearchPageState extends State<SearchPage>{
   static List<FoodModel> main_food_list = [
     FoodModel("Italian","vagan","aVegan-Stir-Fry",21 ,2.5 ,"assets/Vegan-Stir-Fry-006.webp"),
     FoodModel("Middel East","Gluten Free","aCheesy-Skillet-Chicken-Parm-Meatballs",10 ,4 ,"assets/Cheesy-Skillet-Chicken-Parm-Meatballs_012-tight-cropped.webp"),
-    FoodModel("Break Fast","Lactose Free","Steak",33 ,5 ,"assets/easy-dinner-recipes-f768402675e04452b1531360736da8b5.jpg"),
+    FoodModel("Break fast","Lactose Free","Steak",33 ,5 ,"assets/easy-dinner-recipes-f768402675e04452b1531360736da8b5.jpg"),
     FoodModel("Middel East","Gluten Free","Chicken and Rice ",16 ,1.5 ,"assets/sub-buzz-1009-1646440684-8.jpg"),
     FoodModel("Indian","Vegetarian","Creamy-Cajun-Chicken",35 ,2 ,"assets/Creamy-Cajun-Chicken-6.webp"),
     FoodModel("Orintal","vagan","Beef Burger",17 ,1 ,"assets/wp7029319.webp"),
