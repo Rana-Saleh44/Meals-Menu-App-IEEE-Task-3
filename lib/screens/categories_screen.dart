@@ -12,11 +12,11 @@ class CategoriesScreen extends StatelessWidget {
       ),
       drawer: MainDrawer(),
       body: const CustomScrollView(
-          // slivers: [
+          // slvers: [
           //   CategoriesListViewBuilder(
           //     category: category,
           //   ),
-          // ],
+          // ],i
           ),
     );
   }
