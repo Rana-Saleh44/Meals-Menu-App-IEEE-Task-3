@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:task3/models/food_model.dart';
 import 'package:task3/widgets/main_drawer.dart';
+import 'package:task3/screens/meal_detail.dart';
+import 'package:task3/data/dummy_data.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key, required this.category});
@@ -23,9 +25,16 @@ class SearchPage extends StatefulWidget {
   State<SearchPage> createState() => _SearchPageState();
 }
 
+void _selectMeal(BuildContext context, FoodModel meal) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => MealDetailsScreen(meal: meal)),
+  );
+}
+
 class _SearchPageState extends State<SearchPage> {
   // Dummy food list
-  static List<FoodModel> mainFoodList = [
+/*   static List<FoodModel> mainFoodList = [
     FoodModel("Italian", "Vegan", "aVegan-Stir-Fry", 21, 2.5,
         "assets/Vegan-Stir-Fry-006.webp"),
     FoodModel(
@@ -48,6 +57,9 @@ class _SearchPageState extends State<SearchPage> {
     FoodModel("Oriental", "Vegan", "Koshary", 1, 5,
         "assets/Egyptian-Koshari-square-768x768.jpg"),
   ];
+ */
+
+  static List<FoodModel> mainFoodList = availableMeals;
 
   // List to display and filter
   List<FoodModel> display_list = List.from(mainFoodList);
@@ -57,7 +69,7 @@ class _SearchPageState extends State<SearchPage> {
     setState(() {
       display_list = mainFoodList
           .where((element) =>
-              element.food_title!.toLowerCase().contains(value.toLowerCase()))
+              element.food_title.toLowerCase().contains(value.toLowerCase()))
           .toList();
     });
   }
@@ -176,15 +188,18 @@ class _SearchPageState extends State<SearchPage> {
                       ),
                     )
                   : ListView.builder(
-                      itemCount: display_list.length,
+                      itemCount: mainFoodList.length,
                       itemBuilder: (context, index) => ListTile(
+                        onTap: () {
+                          _selectMeal(context, display_list[index]);
+                        },
                         contentPadding: const EdgeInsets.all(8.0),
                         title: Column(
                           crossAxisAlignment: CrossAxisAlignment
                               .start, // Align text to the left
                           children: [
                             Text(
-                              display_list[index].food_title!,
+                              display_list[index].food_title,
                               style: const TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,
@@ -202,7 +217,7 @@ class _SearchPageState extends State<SearchPage> {
                           ],
                         ),
                         subtitle: Text(
-                          '${display_list[index].food_price!}\$',
+                          '${display_list[index].food_price}\$',
                           style: const TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
@@ -220,7 +235,7 @@ class _SearchPageState extends State<SearchPage> {
                           width: 100,
                           height: 100,
                           child: Image.asset(
-                            display_list[index].food_poster_url!,
+                            display_list[index].food_poster_url,
                             fit: BoxFit.cover,
                           ),
                         ),
