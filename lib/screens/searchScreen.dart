@@ -4,38 +4,40 @@ import 'package:flutter/material.dart';
 import 'package:task3/models/food_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SearchPage extends StatefulWidget{
-  const SearchPage ({Key?key}) : super (key:key);
-    @override
-    State<SearchPage>createState()=>_SearchPageState();
+class SearchPage extends StatefulWidget {
+  final String selectedCategory; // Add a field to receive the selected category
+
+  const SearchPage({Key? key, required this.selectedCategory}) : super(key: key);
+
+  @override
+  State<SearchPage> createState() => _SearchPageState();
 }
 
-class _SearchPageState extends State<SearchPage>{
-  // dummy food
-  static List<FoodModel> main_food_list = [
-    FoodModel("Italian","vagan","aVegan-Stir-Fry",21 ,2.5 ,"assets/Vegan-Stir-Fry-006.webp"),
-    FoodModel("Middel East","Gluten Free","aCheesy-Skillet-Chicken-Parm-Meatballs",10 ,4 ,"assets/Cheesy-Skillet-Chicken-Parm-Meatballs_012-tight-cropped.webp"),
-    FoodModel("Break fast","Lactose Free","Steak",33 ,5 ,"assets/easy-dinner-recipes-f768402675e04452b1531360736da8b5.jpg"),
-    FoodModel("Middel East","Gluten Free","Chicken and Rice ",16 ,1.5 ,"assets/sub-buzz-1009-1646440684-8.jpg"),
-    FoodModel("Indian","Vegetarian","Creamy-Cajun-Chicken",35 ,2 ,"assets/Creamy-Cajun-Chicken-6.webp"),
-    FoodModel("Orintal","vagan","Beef Burger",17 ,1 ,"assets/wp7029319.webp"),
-    FoodModel("Italian","Lactose Free","Pizza",34 ,3.7 ,"assets/1050377.jpg"),
-    FoodModel("Orintal","vagan","Koshary",1 ,5 ,"assets/Egyptian-Koshari-square-768x768.jpg"),
+class _SearchPageState extends State<SearchPage> {
+  // Dummy food list
+  static List<FoodModel> mainFoodList = [
+    FoodModel("Italian", "Vegan", "aVegan-Stir-Fry", 21, 2.5, "assets/Vegan-Stir-Fry-006.webp"),
+    FoodModel("Middle East", "Gluten Free", "aCheesy-Skillet-Chicken-Parm-Meatballs", 10, 4, "assets/Cheesy-Skillet-Chicken-Parm-Meatballs_012-tight-cropped.webp"),
+    FoodModel("Break fast", "Lactose Free", "Steak", 33, 5, "assets/easy-dinner-recipes-f768402675e04452b1531360736da8b5.jpg"),
+    FoodModel("Middle East", "Gluten Free", "Chicken and Rice", 16, 1.5, "assets/sub-buzz-1009-1646440684-8.jpg"),
+    FoodModel("Indian", "Vegetarian", "Creamy-Cajun-Chicken", 35, 2, "assets/Creamy-Cajun-Chicken-6.webp"),
+    FoodModel("Oriental", "Vegan", "Beef Burger", 17, 1, "assets/wp7029319.webp"),
+    FoodModel("Italian", "Lactose Free", "Pizza", 34, 3.7, "assets/1050377.jpg"),
+    FoodModel("Oriental", "Vegan", "Koshary", 1, 5, "assets/Egyptian-Koshari-square-768x768.jpg"),
   ];
 
-  // list will display and filter
-  List<FoodModel>display_list= List.from(main_food_list);
-  void updateList(String value)
-  {
-    // filter data
+  // List to display and filter
+  List<FoodModel> display_list = List.from(mainFoodList);
+
+  void updateList(String value) {
+    // Filter data based on search term (unchanged)
     setState(() {
-      display_list=main_food_list.where((element) => element.food_title!.toLowerCase().contains(value.toLowerCase()))
-      .toList();
+      display_list = mainFoodList.where((element) => element.food_title!.toLowerCase().contains(value.toLowerCase()))
+          .toList();
     });
   }
 
-
-   List<String> selectedFoodTypes = [];
+  List<String> selectedFoodTypes = [];
 
   // Function to update selected food types and filter the list
   void updateSelectedFoodTypes(String foodType) {
@@ -47,25 +49,30 @@ class _SearchPageState extends State<SearchPage>{
         // Otherwise, add it to the selected food types list
         selectedFoodTypes.add(foodType);
       }
-      // Filter the list based on selected food types
+      // Filter the list based on selected food types and category
       filterList();
     });
   }
 
-  // Function to filter the list based on selected food types
+  // Function to filter the list based on selected food types and category
   void filterList() {
     setState(() {
-      if (selectedFoodTypes.isEmpty) {
-        // If no food types are selected, display all items
-        display_list = List.from(main_food_list);
+      if (selectedFoodTypes.isEmpty && widget.selectedCategory.isEmpty) {
+        // Display all items if no filters are applied
+        display_list = List.from(mainFoodList);
+      } else if (selectedFoodTypes.isEmpty) {
+        // Filter by category only
+        display_list = mainFoodList.where((food) => food.food_type == widget.selectedCategory).toList();
+      } else if (widget.selectedCategory.isEmpty) {
+        // Filter by selected food types only
+        display_list = mainFoodList.where((food) => selectedFoodTypes.contains(food.food_type)).toList();
       } else {
-        // Filter the main food list based on selected food types
-        display_list = main_food_list.where((food) {
-          return selectedFoodTypes.contains(food.food_type);
-        }).toList();
+        // Filter by both category and selected food types
+        display_list = mainFoodList.where((food) => food.food_type == widget.selectedCategory && selectedFoodTypes.contains(food.food_type)).toList();
       }
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -134,16 +141,30 @@ class _SearchPageState extends State<SearchPage>{
                       ),
                     )
                   : ListView.builder(
-                      itemCount: display_list.length,
-                      itemBuilder: (context, index) => ListTile(
-                        contentPadding: const EdgeInsets.all(8.0),
-                        title: Text(
-                          display_list[index].food_title!,
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
+                    itemCount: display_list.length,
+                    itemBuilder: (context, index) => ListTile(
+                      contentPadding: const EdgeInsets.all(8.0),
+                      title: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start, // Align text to the left
+                        children: [
+                          Text(
+                            display_list[index].food_title!,
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
+                          const SizedBox(height: 4.0), // Add a small vertical space
+                          Text(
+                            "${display_list[index].food_type} - ${display_list[index].food_catigory}",
+                            style: const TextStyle(
+                              color: Colors.grey,
+                              fontSize: 12.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                        
                         subtitle: Text(
                           '${display_list[index].food_price!}\$',
                           style: const TextStyle(
